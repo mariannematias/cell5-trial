@@ -1,0 +1,202 @@
+body {
+    font-family: 'Roboto';
+    letter-spacing: 0.0625em;
+}
+.title-font {
+    font-family: 'Playfair Display';
+}
+
+/** Header Navigation **/
+#mainNav {
+    min-height: 56px;
+    background-color: #151325;
+}
+#mainNav .navbar-toggler {
+    font-size: 80%;
+    padding: 0.75rem;
+    color: #64a19d;
+    border: 1px solid #64a19d;
+}
+#mainNav .navbar-toggler:focus {
+    outline: none;
+}
+#mainNav .navbar-brand {
+    color: #161616;
+    font-weight: 700;
+    padding: .9rem 0;
+}
+#mainNav .navbar-nav .nav-item:hover {
+    color: fade(white, 80%);
+    outline: none;
+    background-color: transparent;
+}
+#mainNav .navbar-nav .nav-item:active, #mainNav .navbar-nav .nav-item:focus {
+    outline: none;
+    background-color: transparent;
+}
+#navbarResponsive ul li:nth-child(-n+3) {
+    display: none;
+}
+.header-social li {
+    list-style-type: none;
+    display: inline-block;
+    padding: 2rem .2rem;
+}
+.header-social li i {
+    color: #fff;
+    border: 1px solid #fff;
+    padding: .3rem .5rem;
+    border-radius: .3rem;
+    font-size: .85rem;
+}
+
+/** Hero Section **/
+.carousel-item {
+    height: 83vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.carousel-item:after,
+.extra:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,0.4);
+}
+.carousel-caption {
+    position: absolute;
+    right: 15%;
+    bottom: 0;
+    top: 20%;
+    left: 15%;
+    text-align: left;
+    width: 30%;
+}
+.btn-rounded {
+    border: 1px solid #fff;
+    border-radius: 2rem;
+}
+.btn-video {
+    padding: .7rem 2rem .7rem 4rem;
+    position: relative;
+    color: #fff;
+}
+.btn-video i {
+    font-size: 2rem;
+    color:#fff;
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+}
+.section-title {
+    text-transform: uppercase;
+    color: #1F1D36;
+}
+.services-list h5 {
+    font-weight: 600;
+}
+.btn-view {
+    border: 1px solid #cfcfcf;
+    color: #A55313;
+    text-transform: uppercase;
+    padding: .5rem 2.5rem;
+    font-weight: 500;
+}
+.about-content {
+    width: 80%;
+    margin: 3rem auto 2rem;
+}
+.about .container {
+    border-bottom: 2px solid #1F1D36;
+}
+.portfolio {
+    overflow: hidden;
+}
+.extra {
+    background: url('../images/7.jpg') no-repeat center;
+    background-size: cover;
+    position: relative;
+}
+
+footer .footer-links li {
+    list-style-type: none;
+}
+.copyright {
+    background-color: #151325;
+    font-size: .85rem;
+    font-weight: 300;
+}
+
+
+@media (min-width: 992px) {
+    #mainNav {
+        padding-top: 0;
+        padding-bottom: 0;
+        border-bottom: 2px solid #A55313;
+        background-color: #151325;
+        -webkit-transition: background-color 0.3s ease-in-out;
+        transition: background-color 0.3s ease-in-out;
+    }
+    #mainNav .navbar-brand {
+        padding: .5rem 0;
+        color: rgba(255, 255, 255, 0.5);
+    }
+    #mainNav .nav-link {
+        -webkit-transition: none;
+        transition: none;
+        padding: 2rem 1.5rem;
+        color: #fff;
+    }
+    #mainNav .nav-link:hover {
+        opacity: .7;
+    }
+    #mainNav .nav-link:active {
+        color: rgba(255, 255, 255, 0.5);
+    }
+    #mainNav.navbar-shrink {
+        background-color: #fff;
+    }
+    #mainNav.navbar-shrink .navbar-brand {
+        color: #161616;
+    }
+    #mainNav.navbar-shrink .nav-link {
+        color: #161616;
+        padding: 1.5rem 1.5rem 1.25rem;
+        border-bottom: 0.25rem solid transparent;
+    }
+    #mainNav.navbar-shrink .nav-link:hover {
+        color: #64a19d;
+    }
+    #mainNav.navbar-shrink .nav-link:active {
+        color: #467370;
+    }
+    #mainNav.navbar-shrink .nav-link.active {
+        color: #64a19d;
+        outline: none;
+        border-bottom: 0.25rem solid #64a19d;
+    }
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (max-width: 475px) {
+    #navbarResponsive ul li:nth-child(-n+3) {
+        display: block;
+    }
+    .header-social {
+        display: none;
+    }
+    .carousel-item {
+        height: auto;
+    }
+}
