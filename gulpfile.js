@@ -2,11 +2,11 @@
 const gulp = require('gulp')
 const autoprefixer = require('gulp-autoprefixer')
 const gp_concat = require('gulp-concat')
-var csso = require('gulp-csso');
-var del = require('del');
-var htmlmin = require('gulp-htmlmin');
-var runSequence = require('run-sequence');
-var uglify = require('gulp-uglify');
+const csso = require('gulp-csso');
+const del = require('del');
+const htmlmin = require('gulp-htmlmin');
+const runSequence = require('run-sequence');
+const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 
 // Set the browser that you want to support
