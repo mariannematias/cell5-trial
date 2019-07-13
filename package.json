@@ -1,0 +1,19 @@
+{
+  "name": "local-minifier",
+  "version": "0.1.0",
+  "description": "Minify and optimize",
+  "devDependencies": {
+    "del": "^2.0.2",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^2.0.0",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-imagemin": "^6.0.0",
+    "gulp-uglify": "^2.0.0",
+    "run-sequence": "^1.2.2"
+  },
+  "engines": {
+    "node": ">=0.12.0"
+  }
+}
