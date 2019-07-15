@@ -7,7 +7,7 @@ $(document).ready(function() {
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
             if (target.length) {
                 $('html, body').animate({
-                scrollTop: (target.offset().top - 70)
+                scrollTop: (target.offset().top + 10)
                 }, 1200, "easeInOutExpo");
                 return false;
             }
@@ -17,5 +17,12 @@ $(document).ready(function() {
     // Closes responsive menu when a scroll trigger link is clicked
     $('.js-scroll-trigger').click(function() {
         $('.navbar-collapse').collapse('hide');
+    });
+
+    // Cuts text blocks after 150 characters and adds '...'
+    $('.block-ellipsis').each(function() {
+        if ($(this).text().length > 150) {
+            $(this).text($(this).text().slice(0,150).trim().concat('...'));
+        }
     });
 });

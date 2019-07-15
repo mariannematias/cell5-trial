@@ -26,10 +26,10 @@ const AUTOPREFIXER_BROWSERS = [
 gulp.task('styles', function () {
     return gulp.src(
             [
-                './vendor/bootstrap/css/bootstrap.min.css',
-                './vendor/fontawesome-free/css/all.min.css',
-                './css/normalize.css',
-                './css/style.css'
+                './src/vendor/bootstrap/css/bootstrap.min.css',
+                './src/vendor/fontawesome-free/css/all.min.css',
+                './src/css/normalize.css',
+                './src/css/style.css'
             ]
         )
         .pipe(autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
@@ -42,20 +42,28 @@ gulp.task('styles', function () {
 gulp.task('copy-fonts', function(){
     return gulp.src(
             [
-                './vendor/fontawesome-free/webfonts/**'
+                './src/vendor/fontawesome-free/webfonts/**'
             ]
         )
         .pipe(gulp.dest('./dist/webfonts/'))
 })
 
+// Add HTML files here
+gulp.task('pages', () => {
+    return gulp.src('./src/**/*.html')
+      .pipe(htmlmin({ collapseWhitespace: true }))
+      .pipe(gulp.dest('./'));
+  });
+
+
 // Add JS files here
 gulp.task('scripts', function() {
     return gulp.src(
         [
-            './vendor/jquery/jquery.min.js',
-            './vendor/bootstrap/js/bootstrap.bundle.min.js',
-            './vendor/jquery-easing/jquery.easing.min.js',
-            './js/scripts.js'
+            './src/vendor/jquery/jquery.min.js',
+            './src/vendor/bootstrap/js/bootstrap.bundle.min.js',
+            './src/vendor/jquery-easing/jquery.easing.min.js',
+            './src/js/scripts.js'
         ]
     )
         .pipe(gp_concat('vendor.min.js'))
@@ -65,7 +73,7 @@ gulp.task('scripts', function() {
 
 // For images
 gulp.task('images', function() {
-    return gulp.src("./images/*")
+    return gulp.src("./src/images/*")
         .pipe(imagemin()) 
         .pipe(gulp.dest("./dist/images"));
 });
@@ -79,6 +87,14 @@ gulp.task('build', ['clean'], function () {
     'styles',
     'copy-fonts',
     'scripts',
+    'pages',
     'images'
   );
 });
+
+gulp.task('watch', function() {
+    gulp.watch('src/css/**/*', ['styles']);
+    gulp.watch('src/js/**/*', ['scripts']); 
+    gulp.watch('src/**/*.html', ['pages']); 
+    gulp.watch('src/images/**/*', ['images']);
+})
